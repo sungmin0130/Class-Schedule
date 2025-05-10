@@ -13,7 +13,7 @@ import {
 } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-firestore.js";
 
 const firebaseConfig = {
-  apiKey: "",
+  apiKey: "AIzaSyBRH41bLzdtcyDeXh4v2xlKQtAyFVDRRLQ",
   authDomain: "class-schedule-3f91b.firebaseapp.com",
   projectId: "class-schedule-3f91b",
   storageBucket: "class-schedule-3f91b.appspot.com",
@@ -33,19 +33,17 @@ async function verifyPassword(input) {
 }
 
 document.addEventListener("DOMContentLoaded", async () => {
-  // 🌙 다크모드 기억
   if (localStorage.getItem("mode") === "dark") {
     document.body.classList.add("dark");
   }
-
   document.getElementById("dark-mode-toggle").addEventListener("click", () => {
     document.body.classList.toggle("dark");
     const isDark = document.body.classList.contains("dark");
     localStorage.setItem("mode", isDark ? "dark" : "light");
   });
 
-  const calendarPage = document.getElementById("calendar-page") || document.querySelector("#calendar").parentElement;
-  const detailPage = document.getElementById("detail-page") || document.querySelector("#day-detail");
+  const calendarPage = document.getElementById("calendar-page");
+  const detailPage = document.getElementById("day-detail");
   const calendarEl = document.getElementById("calendar");
   const selectedDateEl = document.getElementById("selected-date");
   const eventListEl = document.getElementById("event-list");
@@ -67,6 +65,15 @@ document.addEventListener("DOMContentLoaded", async () => {
   alertBox.style.marginBottom = "10px";
   alertBox.style.borderRadius = "8px";
   calendarPage.prepend(alertBox);
+
+  const backButton = document.createElement("button");
+  backButton.textContent = "← 돌아가기";
+  backButton.style.marginBottom = "10px";
+  backButton.addEventListener("click", () => {
+    detailPage.classList.add("hidden");
+    calendarPage.classList.remove("hidden");
+  });
+  detailPage.prepend(backButton);
 
   document.getElementById("add-event-btn").addEventListener("click", () => {
     eventFormArea.classList.toggle("hidden");
@@ -154,7 +161,6 @@ document.addEventListener("DOMContentLoaded", async () => {
       dateClick: async function (info) {
         selectedDate = info.dateStr;
         selectedDateEl.innerText = `📌 ${selectedDate} 일정`;
-
         calendarPage.classList.add("hidden");
         detailPage.classList.remove("hidden");
         eventFormArea.classList.add("hidden");

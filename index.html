@@ -1,41 +1,38 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>우리반 일정표</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>1-2 일정표</title>
   <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.10/main.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
   <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.10/index.global.min.js"></script>
   <script type="module" src="script.js" defer></script>
-  <link rel="manifest" href="manifest.json">
-  <meta name="theme-color" content="#f2b5d4" />
 </head>
 <body>
-  <!-- 달력 페이지 -->
-  <div id="calendar-page" class="page">
-    <h1>📅 1-2 월별 일정표</h1>
-    <div id="calendar"></div>
-  </div>
+  <div class="container">
+    <h1>📅 1-2 월간 일정표</h1>
+    <button id="dark-mode-toggle">🌙 야간 모드</button>
 
-<button id="dark-mode-toggle">🌙 야간 모드</button>
+    <!-- 달력 영역 -->
+    <div id="calendar-page">
+      <div id="calendar"></div>
+    </div>
 
-  <!-- 날짜 상세 보기 페이지 -->
-  <div id="detail-page" class="page hidden">
-    <button id="back-btn">← 달력으로 돌아가기</button>
-    <h2 id="selected-date">📌 선택한 날짜</h2>
-    <ul id="event-list"></ul>
-
-    <button id="add-event-btn">➕ 일정 추가</button>
-
-    <div id="event-form-area" class="hidden">
-      <form id="event-form">
-        <input type="text" id="title" placeholder="일정" required />
-        <input type="password" id="password" placeholder="비밀번호" required />
-        <button type="submit">추가</button>
-        <input type="text" id="description" placeholder="설명 (예: 준비물, 시간 등)" />
-
-      </form>
+    <!-- 상세 일정 영역 -->
+    <div id="day-detail" class="day-detail hidden">
+      <h2 id="selected-date">📌 선택한 날짜</h2>
+      <ul id="event-list"></ul>
+      <button id="add-event-btn">➕ 일정 추가</button>
+      <div id="event-form-area" class="hidden">
+        <form id="event-form">
+          <input type="text" id="title" placeholder="제목" required />
+          <input type="text" id="description" placeholder="설명 (선택)" />
+          <input type="password" id="password" placeholder="비밀번호" required />
+          <button type="submit">추가</button>
+        </form>
+      </div>
     </div>
   </div>
 </body>
+</html>
