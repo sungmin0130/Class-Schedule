@@ -218,3 +218,13 @@ body.dark .fc-col-header-cell-cushion,
 body.dark .fc-event-title {
   color: #ffffff !important;
 }
+
+#refresh-btn {
+  margin-left: 8px;
+  padding: 8px 12px;
+  background-color: #e0f0ff;
+  color: #333;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  cursor: pointer;
+}

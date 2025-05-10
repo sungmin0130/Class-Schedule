@@ -76,6 +76,10 @@ document.addEventListener("DOMContentLoaded", async () => {
     calendar.render();
   });
   detailPage.prepend(backButton);
+  
+document.getElementById("refresh-btn").addEventListener("click", () => {
+  location.reload(); // 페이지 전체 새로고침
+});
 
   document.getElementById("add-event-btn").addEventListener("click", () => {
     eventFormArea.classList.toggle("hidden");
