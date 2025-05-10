@@ -1,0 +1,220 @@
+body {
+  font-family: 'Noto Sans KR', sans-serif;
+  background-color: #fefefe;
+  margin: 0;
+  padding: 20px;
+  color: #333;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  background: #fffdfc;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+h1, h2 {
+  text-align: center;
+  color: #5e4b8b;
+}
+
+h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+#calendar {
+  margin-top: 20px;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+#day-detail {
+  margin-top: 20px;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #f8f8fb;
+  border: 1px solid #ddd;
+}
+
+.hidden {
+  display: none;
+}
+
+#event-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 15px;
+}
+
+#event-list li {
+  margin-bottom: 12px;
+  background: #fff;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #eee;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+form {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+form input {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 15px;
+}
+
+form button {
+  padding: 10px;
+  background-color: #5e4b8b;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+form button:hover {
+  background-color: #473573;
+}
+
+#add-event-btn {
+  margin-top: 10px;
+  padding: 10px;
+  background-color: #f2b5d4;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#add-event-btn:hover {
+  background-color: #e294c1;
+}
+
+button {
+  cursor: pointer;
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: none;
+  background-color: #d3d3f3;
+  transition: background-color 0.2s ease;
+}
+
+button:hover {
+  background-color: #bbb9e3;
+}
+
+#today-alert {
+  background-color: #fff5c3;
+  padding: 10px 15px;
+  border-radius: 8px;
+  border: 1px solid #ffe58f;
+  margin-bottom: 16px;
+  font-weight: 500;
+  text-align: center;
+  font-size: 15px;
+  color: #665c00;
+}
+
+/* ✅ 모바일 반응형 디자인 */
+@media (max-width: 600px) {
+  body {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .container {
+    padding: 15px;
+  }
+
+  #calendar {
+    width: 100% !important;
+  }
+
+  form input,
+  form button,
+  #add-event-btn {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  #event-list li {
+    font-size: 14px;
+  }
+
+  h1 {
+    font-size: 20px;
+  }
+
+  #today-alert {
+    font-size: 13px;
+  }
+}
+
+/* 🌙 야간 모드 - 흰색 텍스트 테마 */
+body.dark {
+  background-color: #1e1e2f;
+  color: #ffffff;
+}
+
+body.dark .container {
+  background-color: #2e2e40;
+  box-shadow: none;
+}
+
+body.dark #day-detail {
+  background-color: #3a3a50;
+  border-color: #555;
+}
+
+body.dark #event-list li {
+  background-color: #444;
+  border-color: #666;
+  color: #ffffff;
+}
+
+body.dark input,
+body.dark button {
+  background-color: #555;
+  color: #ffffff;
+  border-color: #777;
+}
+
+body.dark #today-alert {
+  background-color: #333;
+  color: #ffffff;
+  border-color: #ffffff;
+}
+/* 야간모드 텍스트 보완 */
+body.dark span,
+body.dark small,
+body.dark a,
+body.dark h1,
+body.dark h2,
+body.dark label {
+  color: #ebc1d9 !important;
+}
+
+body.dark .fc {
+  color: #ffffff !important;
+}
+
+body.dark .fc-daygrid-day-number,
+body.dark .fc-col-header-cell-cushion,
+body.dark .fc-event-title {
+  color: #ffffff !important;
+}
