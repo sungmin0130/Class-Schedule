@@ -13,7 +13,7 @@ import {
 } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-firestore.js";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBRH41bLzdtcyDeXh4v2xlKQtAyFVDRRLQ",
+  apiKey: "",
   authDomain: "class-schedule-3f91b.firebaseapp.com",
   projectId: "class-schedule-3f91b",
   storageBucket: "class-schedule-3f91b.appspot.com",
