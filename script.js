@@ -72,6 +72,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   backButton.addEventListener("click", () => {
     detailPage.classList.add("hidden");
     calendarPage.classList.remove("hidden");
+    calendar.render();
   });
   detailPage.prepend(backButton);
 
