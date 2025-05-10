@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     localStorage.setItem("mode", isDark ? "dark" : "light");
   });
 
-  const calendarPage = document.getElementById("calendar-page") || document.querySelector(".container");
+  const calendarPage = document.getElementById("calendar-page") || document.querySelector("#calendar").parentElement;
   const detailPage = document.getElementById("detail-page") || document.querySelector("#day-detail");
   const calendarEl = document.getElementById("calendar");
   const selectedDateEl = document.getElementById("selected-date");
@@ -155,6 +155,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         selectedDate = info.dateStr;
         selectedDateEl.innerText = `📌 ${selectedDate} 일정`;
 
+        calendarPage.classList.add("hidden");
         detailPage.classList.remove("hidden");
         eventFormArea.classList.add("hidden");
         loadEventsForDay(selectedDate);
